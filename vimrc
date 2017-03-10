@@ -6,14 +6,16 @@
 set history=700
 
 " Enable filetype plugins
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 " Set to auto read when a file is changed from the outside
 set autoread
 
 " Show line numbers
 set number
+
+"enable pathogen
+execute pathogen#infect()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> VIM user interface
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
