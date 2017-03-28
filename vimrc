@@ -75,7 +75,11 @@ colorscheme jellybeans
 
 "Font is Anonymous Pro 12 for gvim
 if has ('gui_running')
-	set guifont=Anonymous\ Pro\ 12
+	if has('gui_win32')
+		set guifont=Anonymous_Pro:h11:cANSI
+	else
+		set guifont=Anonymous\ Pro\ 12
+	endif
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
