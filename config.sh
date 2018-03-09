@@ -14,14 +14,14 @@ esac
 echo 'Working on' ${machine}
 
 # Exit if we can't figure the machine
-if [ ${machine} == "UKNOWN" ]; then
+if [ "${machine}" = "UKNOWN" ]; then
     echo 'Uknown type of machine:'
     uname -s
     exit 1
 fi
 
 
-if [ "${machine}" = "Linux" ]  || [ ${machine} == Mac ]; then
+if [ "${machine}" = "Linux" ]  || [ "${machine}" = "Mac" ]; then
     VIMFOLDER="${HOME}/.vim"
     SLASH="/"
 else 
@@ -33,7 +33,7 @@ fi
 cd ~
 
 # Get needed dependencies
-if [ ${machine} == Linux ]; then
+if [ "${machine}" = "Linux" ]; then
     sudo apt-get install python curl
 fi 
 
