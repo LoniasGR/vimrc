@@ -34,7 +34,7 @@ cd ~
 
 # Get needed dependencies
 if [ "${machine}" = "Linux" ]; then
-    sudo apt-get install python curl
+    sudo apt-get install python3 curl
 fi 
 
 # Create needed directories
@@ -53,4 +53,4 @@ mkdir -p ${VIMFOLDER}${SLASH}autoload ${VIMFOLDER}${SLASH}bundle && \
 
 # Test everything is working
 # TODO: Add more tests other than colors
-python vimrc${SLASH}colortest.py
+python3 vimrc${SLASH}colortest.py
