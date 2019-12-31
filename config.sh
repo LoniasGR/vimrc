@@ -34,11 +34,11 @@ fi
 
 # Check Linux release
 if [ "${machine}" = "Linux" ]; then
-	release="$(tail -n 1 /etc/system-release)"
+	release="$(cat /etc/*release | grep PRETTY_NAME=)"
 	case "${release}" in
-		CentOS*)	distro=CentOS;;
-		Ubuntu*)	distro=Ubuntu;;
-		Debian*)	distro=Debian;;
+		*CentOS*)	distro=CentOS;;
+		*Ubuntu*)	distro=Ubuntu;;
+		*Debian*)	distro=Debian;;
 		*)		distro="Other";
 	esac
 fi
@@ -50,10 +50,10 @@ cd ~
 # Get needed dependencies
 if [ "${machine}" = "Linux" ]; then
 	if [ "${distro}" = "Ubuntu" ] || [ "${distro}" = "Debian" ]; then
-		sudo apt-get install python3 curl
+		sudo apt-get install -y python3 curl vim
 	fi
 	if [ "${distro}" = "CentOS" ]; then
-		sudo dnf install python3 curl
+		sudo dnf install -y python3 curl vim
 	fi
 fi 
 
