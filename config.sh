@@ -60,16 +60,17 @@ fi
 # Create needed directories
 
 mkdir ${VIMFOLDER}
-mkdir ${VIMFOLDER}${SLASH}colors
 
 # Copy files
 cp vimrc${SLASH}vimrc ${HOME}${SLASH}.vimrc
-cp vimrc${SLASH}jellybeans.vim \
-	${VIMFOLDER}${SLASH}colors${SLASH}jellybeans.vim
 
 # Install pathogen
 mkdir -p ${VIMFOLDER}${SLASH}autoload ${VIMFOLDER}${SLASH}bundle && \
 	curl -LSso ${VIMFOLDER}${SLASH}autoload${SLASH}pathogen.vim https://tpo.pe/pathogen.vim
+
+cd ~/.vim/bundle && git clone --branch v1.7 https://github.com/nanotech/jellybeans.vim.git
+
+cd ${HOME}
 
 # Test everything is working
 # TODO: Add more tests other than colors

@@ -1,6 +1,8 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"enable pathogen
+execute pathogen#infect()
 
 " Sets how many lines of history VIM has to remember
 set history=700
@@ -14,8 +16,6 @@ set autoread
 " Show line numbers
 set number
 
-"enable pathogen
-execute pathogen#infect()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> VIM user interface
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -68,7 +68,7 @@ set mat=2
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Enable syntax highlightning
-syntax enable
+syntax on
 
 " Our new colorscheme is jellybeans! Yay!
 colorscheme jellybeans
