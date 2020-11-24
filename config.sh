@@ -74,4 +74,4 @@ cd ${HOME}
 
 # Test everything is working
 # TODO: Add more tests other than colors
-python3 vimrc${SLASH}colortest.py
+python3 vimrc${SLASH}tests${SLASH}colortest.py
