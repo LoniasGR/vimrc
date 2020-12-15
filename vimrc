@@ -96,15 +96,15 @@ set expandtab
 set smarttab
 
 " 1 tab == 4 spaces
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4 softtabstops=4
+set tabstop=4
 
 " Linebreak on 80 characters
 set lbr
 set tw=80
 
 set ai "Auto indent
-set si "Smart indent
+set smartindent "Smart indent
 set wrap "Wrap lines
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
