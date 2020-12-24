@@ -5,40 +5,40 @@ UNAME="$(uname -s)"
 
 
 case "${UNAME}" in
-	Linux*)     OS=Linux;;
-	Darwin*)    OS=Mac;;
-	CYGWIN*)    OS=Cygwin;;
-	MINGW*)     OS=MinGw;;
-	*)          OS="UNKOWN"
+  Linux*)     OS=Linux;;
+  Darwin*)    OS=Mac;;
+  CYGWIN*)    OS=Cygwin;;
+  MINGW*)     OS=MinGw;;
+  *)          OS="UNKOWN"
 esac
 
 echo 'Working on' ${OS}
 
 # Exit if we can't figure the OS
 if [ "${OS}" = "UKNOWN" ]; then
-	echo 'Uknown type of OS:'
-	uname -s
-	exit 1
+  echo 'Uknown type of OS:'
+  uname -s
+  exit 1
 fi
 
 
 if [ "${OS}" = "Linux" ]  || [ "${OS}" = "Mac" ]; then
-	VIMFOLDER="${HOME}/.vim"
+  VIMFOLDER="${HOME}/.vim"
 
 
 else 
-	VIMFOLDER="~\vimfiles"
+  VIMFOLDER="~\vimfiles"
 fi
 
 # Check Linux release
 if [ "${OS}" = "Linux" ]; then
-	release="$(cat /etc/*release | grep PRETTY_NAME=)"
-	case "${release}" in
-		*CentOS*)	DISTRO=CentOS;;
-		*Ubuntu*)	DISTRO=Ubuntu;;
-		*Debian*)	DISTRO=Debian;;
-		*)		DISTRO="Other";
-	esac
+  release="$(cat /etc/*release | grep PRETTY_NAME=)"
+  case "${release}" in
+    *CentOS*)	DISTRO=CentOS;;
+    *Ubuntu*)	DISTRO=Ubuntu;;
+    *Debian*)	DISTRO=Debian;;
+    *)		DISTRO="Other";
+  esac
 fi
 
 echo 'Linux distribution is' ${release}
@@ -47,12 +47,12 @@ echo 'Linux distribution is' ${release}
 
 # Get needed dependencies
 if [ "${OS}" = "Linux" ]; then
-	if [ "${DISTRO}" = "Ubuntu" ] || [ "${DISTRO}" = "Debian" ]; then
-		sudo apt-get install -y python3 curl vim fontconfig
-	fi
-	if [ "${DISTRO}" = "CentOS" ]; then
-		sudo dnf install -y python3 curl vim
-	fi
+  if [ "${DISTRO}" = "Ubuntu" ] || [ "${DISTRO}" = "Debian" ]; then
+    sudo apt-get install -y python3 curl vim fontconfig xfonts-utils
+  fi
+  if [ "${DISTRO}" = "CentOS" ]; then
+    sudo dnf install -y python3 curl vim
+  fi
 fi 
 
 VIMVERSION="$(vim --version | head -1 | cut -d ' ' -f 5)"
