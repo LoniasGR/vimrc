@@ -48,7 +48,7 @@ echo 'Linux distribution is' ${release}
 # Get needed dependencies
 if [ "${OS}" = "Linux" ]; then
 	if [ "${DISTRO}" = "Ubuntu" ] || [ "${DISTRO}" = "Debian" ]; then
-		sudo apt-get install -y python3 curl vim
+		sudo apt-get install -y python3 curl vim fontconfig
 	fi
 	if [ "${DISTRO}" = "CentOS" ]; then
 		sudo dnf install -y python3 curl vim
