@@ -6,7 +6,7 @@ bash ./install_requirements.sh
 CURRDIR=`pwd`
 cd ${HOME}
 
-VIMVERSION="$(vim --version | head -1 | cut -d ' ' -f 5) | cut -f1 -d".""
+VIMVERSION="$(vim --version | head -1 | cut -d ' ' -f 5) | cut -f1 -d'.'"
 
 if [$VIMVERSION != "8"]; then 
     git clone https://github.com/vim/vim.git
