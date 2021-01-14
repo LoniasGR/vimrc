@@ -8,7 +8,7 @@ cd ${HOME}
 
 VIMVERSION="$(vim --version | head -1 | cut -d ' ' -f 5 | cut -f1 -d'.')"
 
-if [$VIMVERSION != "8"]; then 
+if [ $VIMVERSION != "8" ]; then 
     git clone https://github.com/vim/vim.git
     cd src
     make distclean  # if you build Vim before
