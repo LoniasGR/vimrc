@@ -4,6 +4,5 @@ bash ./install_requirements.sh
 
 curl -sLf https://spacevim.org/install.sh | bash
 
-mkdir -p ${HOME}/.SpaceVim.d/
-rm ${HOME}/.SpaceVim.d/init.toml
+rm ${HOME}/.SpaceVim.d/init.toml || mkdir -p ${HOME}/.SpaceVim.d/
 cp ./init.toml ${HOME}/.SpaceVim.d/
