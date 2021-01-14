@@ -49,8 +49,10 @@ echo 'Linux distribution is' ${release}
 if [ "${OS}" = "Linux" ]; then
   if [ "${DISTRO}" = "Ubuntu" ] || [ "${DISTRO}" = "Debian" ]; then
   	if [[ $EUID -eq 0 ]]; then
+	  	apt-get update && \
     	apt-get install -y python3 curl vim fontconfig xfonts-utils
 	else
+		sud apt-get update && \
 	    sudo apt-get install -y python3 curl vim fontconfig xfonts-utils
 	fi
   fi
