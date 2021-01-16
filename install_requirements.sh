@@ -48,25 +48,25 @@ echo 'Linux distribution is' ${release}
 # Get needed dependencies
 if [ "${OS}" = "Linux" ]; then
   if [ "${DISTRO}" = "Ubuntu" ] || [ "${DISTRO}" = "Debian" ]; then
-  	if [[ $EUID -eq 0 ]]; then
-	  	apt-get update && \
-    	apt-get install -y python3 \
-        curl \ 
-        vim \ 
-        fontconfig \ 
+    if [[ $EUID -eq 0 ]]
+    then
+      apt-get update && \
+        apt-get install -y python3 \
+        curl \
+        vim \
+        fontconfig \
         xfonts-utils \
         libncurses5-dev \
         libncursesw5-dev
-	else
-		sud apt-get update && \
-	    sudo apt-get install -y python3 \
-        curl \ 
-        vim \ 
-        fontconfig \ 
-        xfonts-utils \
-        libncurses5-dev \
-        libncursesw5-dev
-	fi
+    else
+         sudo apt-get update && sudo apt-get install -y python3 \
+         curl \
+         vim \
+         fontconfig \
+         xfonts-utils \
+         libncurses5-dev \
+         libncursesw5-dev
+    fi
   fi
   if [ "${DISTRO}" = "CentOS" ]; then
     sudo dnf install -y python3 curl vim
