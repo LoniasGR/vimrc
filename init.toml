@@ -27,8 +27,8 @@ enable_statusline_mode = false
 statusline_unicode_symbols = false
 # Enable vim compatible mode, avoid changing origin vim key bindings
 vimcompatible = true
-# Set default ident to 2
-default_indent = 2
+# Set default ident to 4
+default_indent = 4
 
 # Enable autocomplete layer
 [[layers]]
