@@ -1,5 +1,5 @@
 # My vimrc and an a script to install it #
----------------------------------------------
+
 ## Author: Leonidas Avdelas
 
 ## About
