@@ -1,4 +1,4 @@
-# My vimrc and an a script to install it #
+# My vimrc and a script to install it #
 
 ## Author: Leonidas Avdelas
 
